@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="datos.Espacio" table="espacio">
+		<id name="idEspacio" column="idEspacio">
+			<generator class="identity"></generator>
+		</id>
+		<property name="fecha" column="fecha" type="LocalDate"></property>
+		<property name="turno" column="turno" type="char"></property>
+		<property name="libre" column="libre" type="boolean"></property>
+		<many-to-one name="aula" column="idAula" class="datos.Aula"></many-to-one>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="datos.Aula" table="aula">
+		
+		<id name="idAula" column="idAula">
+			<generator class="identity"></generator>
+		</id>
+		<property name="numero" column="numero" type="int"></property>
+		
+		<many-to-one name="edificio" column="idEdificio" class="datos.Edificio"></many-to-one>
+		
+		<set name="espacios" table="espacio" cascade="save-update" fetch="select" lazy="true" order-by="idEspacio asc">
+			<key column="idAula"></key>
+			<one-to-many class="datos.Espacio"/>
+		</set>
+		
+		<joined-subclass name="datos.Laboratorio" table="laboratorio">
+			
+			<key column="idLaboratorio"></key>
+			
+			<property name="cantPC" column="cantPC" type="int"></property>
+			<property name="cantSillas" column="cantSillas" type="int"></property>
+		</joined-subclass>
+		
+		<joined-subclass name="datos.Tradicional" table="tradicional">
+			
+			<key column="idTradicional"></key>
+			
+			<property name="cantBancos" column="cantBancos" type="int"></property>
+			<property name="pizarron" column="pizarron" type="char"></property>
+			<property name="tieneProyector" column="tieneProyector" type="boolean"></property>
+			
+		</joined-subclass>
+	</class>
+</hibernate-mapping>

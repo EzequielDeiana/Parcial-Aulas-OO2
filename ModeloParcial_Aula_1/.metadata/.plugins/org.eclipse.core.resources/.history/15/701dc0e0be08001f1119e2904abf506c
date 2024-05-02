@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="connection.class_name">mysql.jdbc.cj.Drvier</property>
+		<property name="connection.url">jdbc:mysql://localhost/bd-hibernate-parcial-aulas</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">270400</property>
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		
+		<mapping resource="mapeos/Aula.hbm.xml"/>
+		<mapping resource="mapeos/Edificio.hbm.xml"/>
+		<mapping resource="mapeos/Espacio.hbm.xml"/>
+	</session-factory>
+</hibernate-configuration>
