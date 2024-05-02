@@ -3,9 +3,9 @@
 <hibernate-configuration>
 	<session-factory>
 		<property name="connection.class_name">mysql.jdbc.cj.Drvier</property>
-		<property name="connection.url">jdbc:mysql://localhost/bd-hibernate-parcial-aulas?serverTimezone=UTC</property>
-		<property name="connection.username">root</property>
-		<property name="connection.password">270400</property>
+		<property name="connection.url">jdbc:mysql://localhost/[dababase-name]?serverTimezone=UTC</property>
+		<property name="connection.username">[Username]</property>
+		<property name="connection.password">[password]</property>
 		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
 		
 		<mapping resource="mapeos/Aula.hbm.xml"/>
